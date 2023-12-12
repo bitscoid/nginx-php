@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  app:
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    build: .
+    ports:
+        - '80:80'
+  sut:
+    image: alpine:3.18
+    depends_on:
+      - app
+    command: sh -c "
+      chmod +x /tmp/test.sh &&
+      /tmp/test.sh"
+    volumes:
+      - "./test.sh:/tmp/test.sh"
