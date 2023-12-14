@@ -61,7 +61,7 @@ COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Setup Document Root
 RUN rm -rf /var/www/html && rm -rf /var/www/localhost
 RUN mkdir -p /var/www/bits
-RUN echo "<?php echo phpinfo(); ?>" > /var/www/bits/index.php
+COPY app/index.php /var/www/bits/index.php
 WORKDIR /var/www/bits
 EXPOSE 80 443
 
