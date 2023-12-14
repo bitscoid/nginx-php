@@ -34,7 +34,7 @@ Repository: https://github.com/bitscoid/nginx-php
 
 * Built on the lightweight and secure Alpine Linux distribution
 * Multi-platform, supporting AMD4, ARMv6, ARMv7, ARM64
-* Very small Docker image size (+/-140MB)
+* Very small Docker image size (+/-74MB)
 * Uses PHP 8.3 for the best performance, low CPU usage & memory footprint
 * Optimized for 100 concurrent users
 * Optimized to only use resources when there's traffic (by using PHP-FPM's `on-demand` process manager)
