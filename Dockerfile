@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.vendor="Nurul Imam" \
     org.opencontainers.image.source="https://github.com/bitscoid/nginx-php" \
     org.opencontainers.image.title="Nginx & PHP-FPM v8.3 Alpine" \
     org.opencontainers.image.description="Nginx & PHP-FPM v8.3 with some popular extensions of Alpine Linux." \
-    org.opencontainers.image.version="2.0" \
+    org.opencontainers.image.version="3.0" \
     org.opencontainers.image.documentation="https://github.com/bitscoid/nginx-php"
 
 # Configure PHP-FPM
