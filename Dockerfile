@@ -1,4 +1,4 @@
-FROM php:8.3.0-fpm-alpine3.18
+FROM php:8.3.1-fpm-alpine3.18
 
 LABEL Maintainer="Nurul Imam <bits.co.id>" \
     Description="Nginx & PHP-FPM v8.3 with some popular extensions of Alpine Linux."
