@@ -1,14 +1,14 @@
-FROM php:8.3.0-fpm-alpine3.18
+FROM php:8.2.0-fpm-alpine3.18
 
 LABEL Maintainer="Nurul Imam <bits.co.id>" \
-    Description="Nginx & PHP-FPM v8.3 with some popular extensions of Alpine Linux."
+    Description="Nginx & PHP-FPM v8.2 with some popular extensions of Alpine Linux."
 
 LABEL org.opencontainers.image.vendor="Nurul Imam" \
     org.opencontainers.image.url="https://github.com/bitscoid/nginx-php" \
     org.opencontainers.image.source="https://github.com/bitscoid/nginx-php" \
-    org.opencontainers.image.title="Nginx & PHP-FPM v8.3 Alpine" \
-    org.opencontainers.image.description="Nginx & PHP-FPM v8.3 with some popular extensions of Alpine Linux." \
-    org.opencontainers.image.version="3.0" \
+    org.opencontainers.image.title="Nginx & PHP-FPM v8.2 Alpine" \
+    org.opencontainers.image.description="Nginx & PHP-FPM v8.2 with some popular extensions of Alpine Linux." \
+    org.opencontainers.image.version="1.0" \
     org.opencontainers.image.documentation="https://github.com/bitscoid/nginx-php"
 
 # Configure PHP-FPM
@@ -69,14 +69,14 @@ EXPOSE 80 443
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
-# Make sure files/folders run under the nobody user
+# Make Permission nobody
 RUN chown -R nobody:nobody /var/www/bits /run /var/lib/nginx /var/log/nginx /usr/local/bin/composer /etc/nginx/http.d /usr/local/etc/php
 
-# Switch to non-root user
+# Switch to nobody
 USER nobody
 
 # Run Script
 CMD ["/run.sh"]
 
-# Configure a healthcheck to validate that everything is up&running
+# Validate
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1

@@ -22,21 +22,5 @@ if [ ! -z "$PHP_UPLOAD_MAX_FILESIZE" ]; then
  sed -i "s/upload_max_filesize = 64M/upload_max_filesize= ${PHP_UPLOAD_MAX_FILESIZE}M/g" /usr/local/etc/php/php.ini
 fi
 
-# Use redis as session storage
-if [ ! -z "$REDIS_HOST" ]; then
- sed -i "s/session.save_handler = files/session.save_handler = redis/g" /usr/local/etc/php/php.ini
- sed -i "s/;session.save_path = "/tmp"/;session.save_path = "tcp:\/\/'${REDIS_HOST}':6379"/g" /usr/local/etc/php/php.ini
-fi
-
-# Run custom scripts
-if [[ "$RUN_SCRIPTS" == "1" ]] ; then
-  if [ -d "/var/www/bits/scripts/" ]; then
-    chmod -Rf 750 /var/www/bits/scripts/*; sync;
-    for i in `ls /var/www/bits/scripts/`; do /var/www/bits/scripts/$i ; done
-  else
-    echo "Can't find script directory"
-  fi
-fi
-
 # Let supervisord start Nginx & PHP-FPM
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
