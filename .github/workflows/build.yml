@@ -11,7 +11,7 @@ on:
 
 env:
   IMAGE_NAME: bantenitsolutions/nginx-php
-  IMAGE_TAG: ${{ github.sha }}
+  IMAGE_TAG: php-8.1
   DOCKER_BUILDKIT: 1
 
 jobs:
