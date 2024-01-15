@@ -1,13 +1,13 @@
-FROM php:7.3-fpm-alpine3.15
+FROM php:7.2-fpm-alpine3.12
 
 LABEL Maintainer="Nurul Imam <bits.co.id>" \
-    Description="Nginx & PHP-FPM v7.3 with some popular extensions of Alpine Linux."
+    Description="Nginx & PHP-FPM v7.2 with some popular extensions of Alpine Linux."
 
 LABEL org.opencontainers.image.vendor="Nurul Imam" \
     org.opencontainers.image.url="https://github.com/bitscoid/nginx-php" \
     org.opencontainers.image.source="https://github.com/bitscoid/nginx-php" \
-    org.opencontainers.image.title="Nginx & PHP-FPM v7.3 Alpine" \
-    org.opencontainers.image.description="Nginx & PHP-FPM v7.3 with some popular extensions of Alpine Linux." \
+    org.opencontainers.image.title="Nginx & PHP-FPM v7.2 Alpine" \
+    org.opencontainers.image.description="Nginx & PHP-FPM v7.2 with some popular extensions of Alpine Linux." \
     org.opencontainers.image.version="1.0" \
     org.opencontainers.image.documentation="https://github.com/bitscoid/nginx-php"
 

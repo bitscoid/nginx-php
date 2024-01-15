@@ -6,7 +6,7 @@ services:
     ports:
         - '80:80'
   sut:
-    image: alpine:3.15
+    image: alpine:3.12
     depends_on:
       - app
     command: sh -c "
